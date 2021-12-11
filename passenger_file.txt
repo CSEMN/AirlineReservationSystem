@@ -1,0 +1,7 @@
+2<->Mahmoud Nasser<->Mansoura
+2<->Elhuseny Gamal Nour<->Manzalah
+4<->Mahmoud Nasser<->Mansoura
+6<->Moussa Ahmed<->Seuz
+6<->Mostafa Elamir<->Germany
+6<->Ali Mohamed<->Luxor
+6<->Mahmoud Nasser<->Mansoura
