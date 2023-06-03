@@ -10,5 +10,4 @@ class PassengerTest {
 	void test() {
 		fail("Not yet implemented");
 	}
-
 }
