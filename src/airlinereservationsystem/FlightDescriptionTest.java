@@ -2,9 +2,15 @@ package airlinereservationsystem;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 class FlightDescriptionTest {
+	
+	@Test
+	public void Flight() {
+		FlightDescription flight = new FlightDescription("Brazil", "Mexico", "00:01", "23:59", 60);
+	}
 
 	@Test
 	public void checkTimeBadFormatCorrect() {
