@@ -12,18 +12,21 @@ class FlightDescriptionTest {
 		assertEquals(true, resp); 
 	}
 	
+	/* Caso de teste:
+	*  Minuto 60 (23:60)
+	*/
 	@Test
-	public void checkTimeBadFormatLimiteSuperior() {
+	public void checkTimeBadFormatLimiteSuperiorMinuto() {
 		boolean resp = FlightDescription.check_time("23:60");
 		assertEquals(false, resp); 
 	}
 	
 	@Test
-	public void checkTimeBadFormatLimiteInferior() {
+	public void checkTimeBadFormatLimiteInferiorHora() {
 		boolean resp = FlightDescription.check_time("-1:00");
 		assertEquals(false, resp); 
 	}
-	
+		
 	@Test
 	public void checkTimeBadFormatMinutoInseridoErrado() {
 		boolean resp = FlightDescription.check_time("01:0");
@@ -31,8 +34,8 @@ class FlightDescriptionTest {
 	}
 	
 	/* Caso de teste: 
-	/*  Inserindo 3 caracteres, sendo o limite inferior da quantidade 
-	/*  de caracteres valida: 4 e 5 
+	*  Inserindo 3 caracteres, sendo o limite inferior da quantidade 
+	*  de caracteres valida: 4 e 5 
 	*/
 	@Test
 	public void checkTimeBadFormatoInseridoErrado() {
@@ -42,8 +45,8 @@ class FlightDescriptionTest {
 	
 	
 	/* Caso de teste: 
-	/*  Inserindo 6 caracteres, sendo o limite superior da quantidade 
-	/*  de caracteres valido que é 4 e 5 
+	*  Inserindo 6 caracteres, sendo o limite superior da quantidade 
+	*  de caracteres valido que é 4 e 5 
 	*/
 	@Test
 	public void checkTimeBadFormatoInseridoErradoCaracteres() {
@@ -52,26 +55,11 @@ class FlightDescriptionTest {
 	}
 	
 	/* Caso de teste: 
-	/*  Não foi inserido os minutos apos os " : "
-	/*
+	*  Não foi inserido os minutos apos os " : "
 	*/
 	@Test
 	public void checkTimeBadFormatMinutoNaoInserido() {
 		boolean resp = FlightDescription.check_time("001:");
 		assertEquals(false, resp); 
 	}
-
-	
-//	@Test
-//	public void checkTimeBadFormatoInseridoCertoCaracteres() {
-//		boolean resp = FlightDescription.check_time("01:001");
-//		assertEquals(false, resp); 
-//	}
-//	
-//	@Test
-//	public void checkTimeBadFormatoInseridoErradoCaracteresMenor() {
-//		boolean resp = FlightDescription.check_time("123");
-//		assertEquals(false, resp); 
-//	}
-
 }
