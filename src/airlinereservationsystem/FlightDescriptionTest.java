@@ -30,18 +30,38 @@ class FlightDescriptionTest {
 		assertEquals(false, resp); 
 	}
 	
+	/* Caso de teste: 
+	/*  Inserindo 3 caracteres, sendo o limite inferior da quantidade 
+	/*  de caracteres valida: 4 e 5 
+	*/
 	@Test
 	public void checkTimeBadFormatoInseridoErrado() {
-		boolean resp = FlightDescription.check_time("1");
+		boolean resp = FlightDescription.check_time("1:0");
 		assertEquals(false, resp); 
 	}
 	
-//	@Test
-//	public void checkTimeBadFormatoInseridoErradoCaracteres() {
-//		boolean resp = FlightDescription.check_time("01:0010");
-//		assertEquals(false, resp); 
-//	}
-//	
+	
+	/* Caso de teste: 
+	/*  Inserindo 6 caracteres, sendo o limite superior da quantidade 
+	/*  de caracteres valido que é 4 e 5 
+	*/
+	@Test
+	public void checkTimeBadFormatoInseridoErradoCaracteres() {
+		boolean resp = FlightDescription.check_time("01:001");
+		assertEquals(false, resp); 
+	}
+	
+	/* Caso de teste: 
+	/*  Não foi inserido os minutos apos os " : "
+	/*
+	*/
+	@Test
+	public void checkTimeBadFormatMinutoNaoInserido() {
+		boolean resp = FlightDescription.check_time("001:");
+		assertEquals(false, resp); 
+	}
+
+	
 //	@Test
 //	public void checkTimeBadFormatoInseridoCertoCaracteres() {
 //		boolean resp = FlightDescription.check_time("01:001");
